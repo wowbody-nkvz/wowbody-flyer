@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WowBody — Студия коррекции фигуры | Новокузнецк</title>
+<meta name="description" content="WowBody — студия аппаратной коррекции фигуры в Новокузнецке. LPG массаж, кавитация, прессотерапия. Скидка 15% на комплексную программу.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════ RESET ═══════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* 2026 palette — warm lavender + champagne gold — "Less but deeper" */
+  --lav-950: #0f0818;
+  --lav-900: #1c0f30;
+  --lav-800: #2d1852;
+  --lav-700: #432672;
+  --lav-600: #5e3a94;
+  --lav-500: #7e56b5;
+  --lav-400: #a47dd6;
+  --lav-300: #c4a5e8;
+  --lav-200: #ddc8f3;
+  --lav-100: #f0e5fa;
+  --lav-50: #f9f5fd;
+
+  --gold-600: #b8860b;
+  --gold-500: #d4a017;
+  --gold-400: #e8b830;
+  --gold-300: #f0cc60;
+  --gold-200: #f7e0a0;
+  --gold-100: #fdf0d0;
+
+  --warm-white: #fefbf6;
+  --cream: #faf4eb;
+  --rose-100: #fef0f0;
+
+  /* Type — 2026: display serif + clean sans */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Spacing scale */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.25rem;
+  --sp-6: 1.5rem;
+  --sp-8: 2rem;
+  --sp-10: 2.5rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+
+  /* Radius */
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+  --r-full: 9999px;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--lav-950);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ═══════════ FLYER CONTAINER ═══════════ */
+.flyer {
+  max-width: 420px;
+  margin: 0 auto;
+  position: relative;
+  min-height: 100dvh;
+  background: var(--lav-900);
+  overflow: hidden;
+}
+
+/* ═══════════ HERO ═══════════ */
+.hero {
+  position: relative;
+  min-height: 560px;
+  overflow: hidden;
+}
+
+.hero__img-wrap {
+  position: relative;
+  width: 100%;
+  height: 560px;
+  overflow: hidden;
+}
+
+.hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg,
+      rgba(28, 15, 48, 0.30) 0%,
+      rgba(28, 15, 48, 0.0) 20%,
+      rgba(28, 15, 48, 0.0) 40%,
+      rgba(28, 15, 48, 0.55) 65%,
+      rgba(28, 15, 48, 0.97) 92%
+    );
+  pointer-events: none;
+}
+
+/* Soft warm glow behind model */
+.hero__glow {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(94, 58, 148, 0.45) 0%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+/* ═══════════ BRAND BAR ═══════════ */
+.brand {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: var(--sp-5) var(--sp-6) var(--sp-3);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.brand__logo {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.brand__mark {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #fff;
+  line-height: 1;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.4);
+}
+
+.brand__label {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+}
+
+.brand__tag {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-200);
+  text-align: right;
+  max-width: 105px;
+  line-height: 1.6;
+  background: rgba(28, 15, 48, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 6px 10px;
+  border-radius: var(--r-sm);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ═══════════ HEADLINE ═══════════ */
+.headline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--sp-10) var(--sp-6) var(--sp-6);
+  z-index: 5;
+}
+
+.headline__main {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 5.5vw, 2.4rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: #fff;
+  margin-bottom: var(--sp-2);
+}
+
+.headline__glow {
+  color: var(--gold-300);
+  font-style: italic;
+}
+
+.headline__sub {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+/* ═══════════ TRUST STRIP ═══════════ */
+.trust {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: var(--sp-5) var(--sp-6);
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.trust__stars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.trust__star {
+  width: 14px;
+  height: 14px;
+  fill: var(--gold-400);
+}
+
+.trust__rating {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin-left: var(--sp-1);
+}
+
+.trust__text {
+  font-size: 0.65rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.4;
+}
+
+/* ═══════════ APPROACH SECTION ═══════════ */
+.approach {
+  padding: var(--sp-8) var(--sp-6) var(--sp-4);
+  background: linear-gradient(180deg, var(--lav-900) 0%, var(--lav-800) 100%);
+}
+
+.section-label {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold-400);
+  margin-bottom: var(--sp-5);
+}
+
+.approach__text {
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.7;
+  margin-bottom: var(--sp-6);
+}
+
+.approach__text strong {
+  color: #fff;
+  font-weight: 500;
+}
+
+/* ═══════════ SERVICES ═══════════ */
+.services {
+  padding: var(--sp-4) var(--sp-6) var(--sp-6);
+  background: var(--lav-800);
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.svc {
+  position: relative;
+  padding: var(--sp-4) var(--sp-3);
+  border-radius: var(--r-md);
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform 0.25s ease, background 0.25s ease;
+  overflow: hidden;
+}
+
+/* Glass shimmer top edge */
+.svc::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 10%, rgba(255,255,255,0.12) 50%, transparent 90%);
+}
+
+.svc__icon {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--r-sm);
+  background: linear-gradient(135deg, var(--lav-600), var(--lav-500));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--sp-2);
+  box-shadow: 0 4px 14px rgba(94, 58, 148, 0.35);
+}
+
+.svc__icon svg {
+  width: 15px;
+  height: 15px;
+  stroke: #fff;
+  stroke-width: 1.8;
+  fill: none;
+}
+
+.svc__name {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 2px;
+  line-height: 1.25;
+}
+
+.svc__desc {
+  font-size: 0.62rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.5;
+}
+
+.svc__price {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: var(--gold-300);
+  background: rgba(212, 160, 23, 0.1);
+  padding: 2px 8px;
+  border-radius: var(--r-full);
+}
+
+/* ═══════════ PROMO ═══════════ */
+.promo {
+  position: relative;
+  padding: var(--sp-6) var(--sp-5);
+  margin: var(--sp-5) var(--sp-6) 0;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+.promo__bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--gold-500) 0%, var(--gold-300) 45%, var(--gold-400) 100%);
+  background-size: 200% 200%;
+  animation: shimmer 5s ease infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.promo__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.promo__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.promo__badge {
+  display: inline-block;
+  background: var(--lav-800);
+  color: var(--gold-300);
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: var(--r-full);
+  margin-bottom: var(--sp-3);
+}
+
+.promo__amount {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--lav-900);
+  line-height: 1;
+  margin-bottom: var(--sp-1);
+}
+
+.promo__text {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--lav-800);
+  line-height: 1.5;
+}
+
+.promo__detail {
+  font-size: 0.68rem;
+  font-weight: 400;
+  color: rgba(45, 24, 82, 0.7);
+  margin-top: var(--sp-2);
+  line-height: 1.5;
+}
+
+/* ═══════════ REVIEW ═══════════ */
+.review {
+  margin: var(--sp-5) var(--sp-6) 0;
+  padding: var(--sp-5);
+  border-radius: var(--r-md);
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.review__quote {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.65;
+  font-style: italic;
+  margin-bottom: var(--sp-3);
+}
+
+.review__quote::before {
+  content: '\201C';
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--gold-400);
+  line-height: 0;
+  vertical-align: -0.35em;
+  margin-right: 4px;
+}
+
+.review__author {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.55);
+}
+
+.review__stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: var(--sp-2);
+}
+
+.review__stars svg {
+  width: 11px;
+  height: 11px;
+  fill: var(--gold-400);
+}
+
+/* ═══════════ STATS ═══════════ */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin: var(--sp-5) var(--sp-6) 0;
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+
+.stats__item {
+  text-align: center;
+  padding: var(--sp-4) var(--sp-2);
+  background: rgba(28, 15, 48, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.stats__val {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--gold-300);
+  line-height: 1.2;
+}
+
+.stats__lbl {
+  font-size: 0.55rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.45);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+/* ═══════════ CONTACT ═══════════ */
+.contact {
+  padding: var(--sp-8) var(--sp-6) var(--sp-6);
+  text-align: center;
+}
+
+.contact__label {
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: var(--sp-3);
+}
+
+.contact__phone {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin-bottom: var(--sp-2);
+  transition: color 0.2s ease;
+}
+
+.contact__phone:hover { color: var(--gold-300); }
+
+.contact__address {
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: var(--sp-1);
+  line-height: 1.5;
+}
+
+.contact__city {
+  font-size: 0.65rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: var(--sp-5);
+}
+
+.contact__hours {
+  font-size: 0.62rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: var(--sp-5);
+}
+
+/* CTA button group */
+.cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  padding: 14px 36px;
+  border-radius: var(--r-full);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  max-width: 280px;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+}
+
+.cta-btn--primary {
+  background: linear-gradient(135deg, var(--gold-500), var(--gold-300));
+  color: var(--lav-900);
+  box-shadow: 0 8px 28px rgba(212, 160, 23, 0.28);
+}
+
+.cta-btn--primary:hover {
+  box-shadow: 0 12px 36px rgba(212, 160, 23, 0.42);
+}
+
+.cta-btn--secondary {
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: none;
+}
+
+.cta-btn--secondary:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.cta-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+}
+
+/* Max messenger accent */
+.cta-btn--max { color: #6c5ce7; border-color: rgba(108, 92, 231, 0.25); }
+.cta-btn--max:hover { background: rgba(108, 92, 231, 0.08); }
+
+/* ═══════════ FOOTER ═══════════ */
+.footer {
+  padding: var(--sp-4) var(--sp-6);
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+.footer__text {
+  font-size: 0.5rem;
+  color: rgba(255,255,255,0.18);
+}
+
+.footer__text a {
+  color: rgba(255,255,255,0.25);
+  text-decoration: none;
+}
+
+/* ═══════════ AMBIENT ═══════════ */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  opacity: 0.2;
+}
+
+.orb--1 { width: 200px; height: 200px; background: var(--lav-500); top: 620px; right: -60px; }
+.orb--2 { width: 140px; height: 140px; background: var(--gold-400); top: 960px; left: -40px; opacity: 0.1; }
+.orb--3 { width: 170px; height: 170px; background: var(--lav-400); bottom: 120px; left: 50%; transform: translateX(-50%); opacity: 0.12; }
+
+/* ═══════════ RESPONSIVE ═══════════ */
+@media print {
+  body { background: white; }
+  .flyer { max-width: none; box-shadow: none; }
+}
+
+@media (min-width: 480px) {
+  body {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: var(--sp-8) 0;
+    min-height: 100dvh;
+    background: var(--lav-950);
+  }
+  .flyer {
+    border-radius: var(--r-lg);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+    margin: 0 auto;
+  }
+}
+</style>
+</head>
+
+<body>
+<article class="flyer">
+  <!-- Ambient glow decorations -->
+  <div class="orb orb--1"></div>
+  <div class="orb orb--2"></div>
+  <div class="orb orb--3"></div>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <div class="hero__img-wrap">
+      <img class="hero__img" src="hero.png" alt="WowBody — студия коррекции фигуры, Новокузнецк" width="420" height="560" loading="eager">
+      <div class="hero__overlay"></div>
+      <div class="hero__glow"></div>
+    </div>
+
+    <div class="brand">
+      <div class="brand__logo">
+        <span class="brand__mark">WowBody</span>
+        <span class="brand__label">Новокузнецк</span>
+      </div>
+      <span class="brand__tag">Студия коррекции фигуры и&nbsp;косметологии</span>
+    </div>
+
+    <div class="headline">
+      <h1 class="headline__main">
+        Ваше тело.<br>
+        <span class="headline__glow">Ваши правила.</span>
+      </h1>
+      <p class="headline__sub">Комплексная аппаратная коррекция фигуры с видимым результатом уже после первого сеанса</p>
+    </div>
+  </section>
+
+  <!-- ═══ TRUST STRIP ═══ -->
+  <div class="trust">
+    <div class="trust__stars">
+      <svg class="trust__star" viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.56l-4.94 2.6.94-5.5-4-3.9 5.61-.87z"/></svg>
+      <svg class="trust__star" viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.56l-4.94 2.6.94-5.5-4-3.9 5.61-.87z"/></svg>
+      <svg class="trust__star" viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.56l-4.94 2.6.94-5.5-4-3.9 5.61-.87z"/></svg>
+      <svg class="trust__star" viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.56l-4.94 2.6.94-5.5-4-3.9 5.61-.87z"/></svg>
+      <svg class="trust__star" viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.56l-4.94 2.6.94-5.5-4-3.9 5.61-.87z"/></svg>
+      <span class="trust__rating">5.0</span>
+    </div>
+    <span class="trust__text">45 отзывов на 2ГИС<br>и Яндекс Картах</span>
+  </div>
+
+  <!-- ═══ APPROACH ═══ -->
+  <section class="approach">
+    <p class="section-label">Комплексный подход</p>
+    <p class="approach__text">
+      <strong>Мы не предлагаем универсальные решения.</strong> Каждая программа подбирается индивидуально: мастер учитывает особенности вашей фигуры, состояние кожи и цели. Сочетание нескольких аппаратных методик даёт результат, который невозможно получить одной процедурой.
+    </p>
+  </section>
+
+  <!-- ═══ SERVICES ═══ -->
+  <section class="services">
+    <p class="section-label">Процедуры</p>
+
+    <div class="services__grid">
+      <div class="svc">
+        <div class="svc__icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke-linecap="round"/><path d="M12 8v4l2 2" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="svc__name">LPG массаж</h3>
+        <p class="svc__desc">Моделирование контуров, подтяжка кожи</p>
+        <span class="svc__price">от 800 ₽</span>
+      </div>
+
+      <div class="svc">
+        <div class="svc__icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 015 5c0 3.5-5 9-5 9S7 10.5 7 7a5 5 0 015-5z"/><path d="M12 16v4m-3 0h6" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="svc__name">Горячий вакуум</h3>
+        <p class="svc__desc">Глубокий прогрев, расщепление жировой ткани</p>
+      </div>
+
+      <div class="svc">
+        <div class="svc__icon">
+          <svg viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m8-9h1M3 12H2m15.36-6.36l.71-.71M5.64 18.36l-.71.71m12.73 0l.71-.71M5.64 5.64l-.71-.71" stroke-linecap="round"/><circle cx="12" cy="12" r="4"/></svg>
+        </div>
+        <h3 class="svc__name">Биофотон</h3>
+        <p class="svc__desc">Фотодинамическое омоложение кожи</p>
+      </div>
+
+      <div class="svc">
+        <div class="svc__icon">
+          <svg viewBox="0 0 24 24"><path d="M3 12c0-3.5 4-9 9-9s9 5.5 9 9-4 9-9 9-9-5.5-9-9z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3 class="svc__name">Кавитация</h3>
+        <p class="svc__desc">Ультразвуковое удаление жировых отложений</p>
+        <span class="svc__price">от 950 ₽</span>
+      </div>
+
+      <div class="svc">
+        <div class="svc__icon">
+          <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="svc__name">Прессотерапия</h3>
+        <p class="svc__desc">Лимфодренаж, снятие отёков и тяжести</p>
+        <span class="svc__price">от 600 ₽</span>
+      </div>
+
+      <div class="svc">
+        <div class="svc__icon">
+          <svg viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="svc__name">Вибромассаж</h3>
+        <p class="svc__desc">Тонус мышц, уменьшение объёмов</p>
+        <span class="svc__price">от 950 ₽</span>
+      </div>
+    </div>
+
+    <!-- ═══ PROMO ═══ -->
+    <div class="promo">
+      <div class="promo__bg"></div>
+      <div class="promo__content">
+        <span class="promo__badge">Комплексная программа</span>
+        <div class="promo__amount">—15%</div>
+        <p class="promo__text">на комплекс из 3+ процедур</p>
+        <p class="promo__detail">Индивидуальный подбор программы мастером. Результат после первого визита</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ REVIEW ═══ -->
+  <div class="review">
+    <div class="review__stars">
+      <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.56l-4.94 2.6.94-5.5-4-3.9 5.61-.87z"/></svg>
+      <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.56l-4.94 2.6.94-5.5-4-3.9 5.61-.87z"/></svg>
+      <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.56l-4.94 2.6.94-5.5-4-3.9 5.61-.87z"/></svg>
+      <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.56l-4.94 2.6.94-5.5-4-3.9 5.61-.87z"/></svg>
+      <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.56l-4.94 2.6.94-5.5-4-3.9 5.61-.87z"/></svg>
+    </div>
+    <p class="review__quote">Прошла курс LPG-массажа и в полном восторге! Уже после первых сеансов кожа стала более упругой, а объёмы уходят. Мастер внимательно отнеслась к пожеланиям, подобрала оптимальный режим. Силуэт заметно подтянулся!</p>
+    <span class="review__author">Варвара — март 2026, Яндекс Карты</span>
+  </div>
+
+  <!-- ═══ STATS ═══ -->
+  <div class="stats">
+    <div class="stats__item">
+      <div class="stats__val">45</div>
+      <div class="stats__lbl">отзывов<br>5 из 5</div>
+    </div>
+    <div class="stats__item">
+      <div class="stats__val">6</div>
+      <div class="stats__lbl">аппаратных<br>методик</div>
+    </div>
+    <div class="stats__item">
+      <div class="stats__val">1-й</div>
+      <div class="stats__lbl">сеанс —<br>результат</div>
+    </div>
+  </div>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section class="contact">
+    <p class="contact__label">Запись</p>
+    <a href="tel:+79234826696" class="contact__phone">8 923 482-66-96</a>
+    <p class="contact__address">ул. Кутузова 39, офис 402, 4 этаж</p>
+    <p class="contact__city">БЦ Кутузовский, Новокузнецк</p>
+    <p class="contact__hours">Ежедневно 10:00 — 21:00 &middot; Бесплатная парковка</p>
+
+    <div class="cta-group">
+      <a href="tel:+79234826696" class="cta-btn cta-btn--primary">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Записаться
+      </a>
+      <a href="https://max.ai/79234826696" class="cta-btn cta-btn--secondary cta-btn--max" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Написать в Макс
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <p class="footer__text">
+      <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+    </p>
+  </footer>
+</article>
+</body>
+</html>
